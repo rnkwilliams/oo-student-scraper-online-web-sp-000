@@ -4,8 +4,15 @@ class Student
 
   @@all = []
 
+  #The #new  or initialize method takes in an argument of a hash and sets
+  #that new student's attributes using the key/value pairs of that hash.
+  #It also adds that new student to the Student class' collection of all
+  #existing students, stored in the `@@all` class variable.
   def initialize(student_hash)
-    
+    student_hash.each do |key, value|
+      self.send("#{key}=", value)
+    end
+    @@all << self
   end
 
   def self.create_from_collection(students_array)
