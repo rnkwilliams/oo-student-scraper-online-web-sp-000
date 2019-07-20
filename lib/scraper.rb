@@ -54,7 +54,7 @@ class Scraper
           student_profile_hash[:github]= link["href"]
 
         elsif !(link["href"].include?("github")) &&
-           !(link["href"].include?("linkedin")) && 
+           !(link["href"].include?("linkedin")) &&
            !(link["href"].include?("twitter")) &&
            !(link["href"].include?("facebook")) &&
            !(link["href"].include?("youtube"))
@@ -62,10 +62,10 @@ class Scraper
         end
       end
 
-     
+
       student_profile_hash[:profile_quote] = doc.css(".profile-quote").text
       student_profile_hash[:bio] = doc.css(".description-holder p").text
       student_profile_hash
-    
+
     end
 end
